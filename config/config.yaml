@@ -77,27 +77,8 @@ platforms:
       name: "抖音"
     - id: "zhihu"
       name: "知乎"
-    - id: "zcool"
-      name: "站酷"
-    - id: "behance"
-      name: "Behance"
-    - id: "dribbble"
-      name: "Dribbble"
-    - id: "ui-cn"
-      name: "UI中国"
-    - id: "instagram"
-      name: "Instagram"
-    - id: "pinterest"
-      name: "Pinterest"
-    - id: "threads"
-      name: "Threads"
-    - id: "twitter"
-      name: "Twitter/X"
-    - id: "behance"
-      name: "Behance"
 
-
-
+      
 # ===============================================================
 # 3. 数据源 - RSS 订阅
 #
@@ -146,6 +127,54 @@ rss:
       url: "https://finance.yahoo.com/news/rssindex"
       enabled: false                  # 禁用
 
+  feeds:
+    # 原有通用源保留
+    - id: "hacker-news"
+      name: "Hacker News"
+      url: "https://hnrss.org/frontpage"
+    - id: "ruanyifeng"
+      name: "阮一峰的网络日志"
+      url: "http://www.ruanyifeng.com/blog/atom.xml"
+    - id: "yahoo-finance"
+      name: "雅虎财经"
+      url: "https://finance.yahoo.com/news/rssindex"
+      enabled: false
+
+    # 新增设计/海外平台 RSS 源 ↓
+    # 站酷 AI 设计相关内容（JSON 格式，适配程序抓取）
+    - id: "zcool-ai-design"
+      name: "站酷AI设计"
+      url: "https://www.zcool.com.cn/feed/json?keyword=AI%E8%AE%BE%E8%AE%A1&type=article"
+      type: "json"
+      max_age_days: 3  # 只推送3天内的新内容
+
+    # Behance 热门 AI 设计作品（官方 RSS）
+    - id: "behance-featured"
+      name: "Behance精选AI设计"
+      url: "https://www.behance.net/feeds/rss/featured"
+      type: "rss"
+      max_age_days: 1  # 只推送1天内的最新作品
+
+    # Pinterest AI 绘画灵感（需替换为你自己的画板 RSS）
+    - id: "pinterest-ai-prompts"
+      name: "Pinterest AI提示词"
+      url: "https://pinterest.com/yourusername/ai-art-prompts.rss"  # 替换成你的画板RSS
+      type: "rss"
+      max_age_days: 2  # 只推送2天内的内容
+
+    # Twitter/X AI 设计话题（第三方 RSS 聚合）
+    - id: "twitter-ai-design"
+      name: "Twitter AI设计"
+      url: "https://rss.app/feeds/3U9Z8X7Y6Q8W9S7D2.xml"  # 可替换为你关注的AI设计话题RSS
+      type: "rss"
+      max_age_days: 1
+
+    # Dribbble 热门设计（官方 RSS）
+    - id: "dribbble-popular"
+      name: "Dribbble热门设计"
+      url: "https://dribbble.com/tags/ai_design.rss"
+      type: "rss"
+      max_age_days: 1
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
