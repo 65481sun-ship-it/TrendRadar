@@ -230,6 +230,19 @@
 [AI 相关]
 /(?<![a-zA-Z])ai(?![a-zA-Z])/
 人工智能
+Prompt工程
+提示词
+AI提示词
+大模型应用
+DeepSeek
+Claude
+Gemini
+AI写作
+AI绘画
+AIGC
+提示词工程
+Prompt设计
+AI辅助创作
 
 [芯片]
 芯片
